@@ -1670,7 +1670,7 @@
             }
           }
         ],
-        "version": "2.1.1",
+        "version": "2.2.0",
         "title": "Architekturdiagramm",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
         "id": 0,
@@ -1681,5 +1681,5 @@
     "diagramTop": 10,
     "threatTop": 102
   },
-  "version": "2.1.1"
+  "version": "2.2.0"
 }
