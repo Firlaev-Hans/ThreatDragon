@@ -73,7 +73,21 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "2a3b3ab9-9b50-4c09-860b-f03d9c6c32c8",
+                  "title": "Stehlen von Login-Daten über Social Engineering",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Über z. B. eine Phishing Mail wird der Nutzer auf eine gefälschte Login-Seite geleitet, wo er seine Credentials und sein OTT angibt, welche ein Angreifer abfangen und für sich nutzen kann.\n\nD: 8 / R: 2 / E: 6 / A: 7 / DREA: 23",
+                  "mitigation": "Schulung der Nutzer des Dienstes / Aufklärung über Phishing und wie man gefälschte Links und Websites erkennen kann\n\nD: 8 / R: 1 / E: 1 / A: 1 / DREA: 13",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 116,
+                  "score": "13"
+                }
+              ],
               "hasOpenThreats": false,
               "providesAuthentication": false
             }
@@ -121,10 +135,38 @@
                   "new": false,
                   "number": 101,
                   "score": "28"
+                },
+                {
+                  "id": "e0ed25de-ea0e-4a09-8158-6a13f0c75886",
+                  "title": "Auslesen der App-Daten von SD-Karte",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Da die Daten der App offenbar so auf der SD-Karte gespeichert werden, dass andere Apps darauf zugreifen können, könnte eine bösartige App die Daten eines Nutzers auslesen und stehlen.\n\nCAPEC-545: Pull Data from System Resources\n\nT1005 Data from Local System\n\nD: 8 / R: 8 / E: 10 / A: 2 / DREA: 28",
+                  "mitigation": "Die Daten sollten nur für die entsprechende App zugreifbar sein. Andere Allsecure-Apps müssen die Daten selbst z. B. über das Netzwerk erlangen.\n\nD: 8 / R: 1 / E: 1 / A: 2 / DREA: 12",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 122,
+                  "score": "12"
+                },
+                {
+                  "id": "8e58f2d1-a992-4aa1-b9aa-322b6b17c6dd",
+                  "title": "Zugriff auf Admin-Funktionen als normaler Nutzer",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Elevation of privilege",
+                  "description": "Fehlende oder fehlerhaft implementierte Authorization checks könnten bewirken, dass ein normaler Nutzer oder sogar ein nicht eingeloggter Nutzer Zugriff auf Administrations-Schnittstellen oder Teile davon erhält.\n\nCAPEC-58: Restful Privilege Elevation\n\nATT&CK: T1068 Exploitation for Privilege Escalation\n\nD: 10 / R: 6 / E: 6 / A: 2 / DREA: 24",
+                  "mitigation": "Zugriffssteuerung für alle sensitiven Bereiche durch ACLs.\n\nD: 10 / R: 2 / E: 2 / A: 2 / DREA: 16",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 123,
+                  "score": "16"
                 }
               ],
               "hasOpenThreats": false,
-              "isWebApplication": null
+              "isWebApplication": null,
+              "handlesCardPayment": null,
+              "handlesGoodsOrServices": null
             }
           },
           {
@@ -157,12 +199,29 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "66a9f37f-6a25-4990-b518-68faccd83695",
+                  "title": "Ausfall des Dienstes",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Bei fehlender Redundanz könnte ein Ausfall des OTT-Dienstes, z. B. aufgrund von vollem Speicher oder Hardware-Ausfällen, dafür sorgen, dass Nutzer sich gar nicht mehr anmelden können.\n\nD: 9 / R: 3 / E: 3 / A: 10 / DREA: 25",
+                  "mitigation": "Redundanz des Services (mehrere Instanzen, Backups).\n\nD: 3 / R: 3 / E: 1 / A: 3 / DREA: 10",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 111,
+                  "score": "10"
+                }
+              ],
               "hasOpenThreats": false,
               "isBidirectional": false,
               "protocol": "",
               "isEncrypted": false,
-              "isPublicNetwork": false
+              "isPublicNetwork": false,
+              "handlesCardPayment": null,
+              "handlesGoodsOrServices": null,
+              "isWebApplication": null
             }
           },
           {
@@ -250,7 +309,8 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "handlesCardPayment": null,
-              "handlesGoodsOrServices": null
+              "handlesGoodsOrServices": null,
+              "isWebApplication": null
             }
           },
           {
@@ -279,7 +339,7 @@
             "data": {
               "name": "Telefon-Routing-\nInterface",
               "description": "",
-              "type": "tm.Flow",
+              "type": "tm.Process",
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -288,7 +348,9 @@
               "isBidirectional": false,
               "protocol": "",
               "isEncrypted": false,
-              "isPublicNetwork": false
+              "isPublicNetwork": false,
+              "handlesCardPayment": null,
+              "handlesGoodsOrServices": null
             }
           },
           {
@@ -506,124 +568,6 @@
             "vertices": []
           },
           {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "2b. Telefonanbieter",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "89064b41-4f11-4231-8847-44a17455cf23",
-            "labels": [
-              {
-                "position": {
-                  "distance": 0.42493433434678074,
-                  "offset": -25.259919757923186
-                },
-                "attrs": {
-                  "label": {
-                    "text": "2a. Telefonnummer"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "ebc88767-2bed-409f-b854-efadec206ba8"
-            },
-            "target": {
-              "cell": "b0b01f0a-68c3-42aa-b22e-8d032f4bfe4f"
-            },
-            "vertices": [
-              {
-                "x": 1055,
-                "y": -40
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Alternative A",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "c8a2c6cd-9c14-4d3d-a923-780ddf4f619e",
-            "labels": [
-              {
-                "position": {
-                  "distance": 0.445568595048388,
-                  "offset": -24.574955131994685
-                },
-                "attrs": {
-                  "label": {
-                    "text": "2b. Telefonanbieter"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "b0b01f0a-68c3-42aa-b22e-8d032f4bfe4f"
-            },
-            "target": {
-              "cell": "ebc88767-2bed-409f-b854-efadec206ba8"
-            },
-            "vertices": [
-              {
-                "x": 1065,
-                "y": 60
-              }
-            ]
-          },
-          {
             "shape": "trust-broundary-curve",
             "width": 200,
             "height": 100,
@@ -808,102 +752,6 @@
               {
                 "x": 1134,
                 "y": 386
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Nummer auslesen",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "id": "173e6c33-8e25-4c5e-bc33-9c78bbdeaaad",
-            "labels": [
-              "Nummer auslesen"
-            ],
-            "source": {
-              "cell": "fd7303e8-29d2-4d76-bf7d-87eb619ede69"
-            },
-            "target": {
-              "cell": "2e16a416-e822-44a0-8501-2d54aa8add4f"
-            },
-            "vertices": [
-              {
-                "x": 984,
-                "y": 585
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Auslesen von Informationen",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "id": "d7581b2c-a214-4fa4-b2d3-b5ec3a1bef88",
-            "labels": [
-              "Auslesen von Informationen"
-            ],
-            "source": {
-              "cell": "b0b01f0a-68c3-42aa-b22e-8d032f4bfe4f"
-            },
-            "target": {
-              "cell": "b1ef5a1b-e975-4fd3-8ba0-079c4b33533f"
-            },
-            "vertices": [
-              {
-                "x": 1100,
-                "y": -91
               }
             ]
           },
@@ -1392,6 +1240,224 @@
             ]
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "2b. Telefonanbieter",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "89064b41-4f11-4231-8847-44a17455cf23",
+            "labels": [
+              {
+                "position": {
+                  "distance": 0.42493433434678074,
+                  "offset": -25.259919757923186
+                },
+                "attrs": {
+                  "label": {
+                    "text": "2a. Telefonnummer"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "ebc88767-2bed-409f-b854-efadec206ba8"
+            },
+            "target": {
+              "cell": "b0b01f0a-68c3-42aa-b22e-8d032f4bfe4f"
+            },
+            "vertices": [
+              {
+                "x": 1055,
+                "y": -40
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Auslesen von Informationen",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "d7581b2c-a214-4fa4-b2d3-b5ec3a1bef88",
+            "labels": [
+              "Auslesen von Informationen"
+            ],
+            "source": {
+              "cell": "b0b01f0a-68c3-42aa-b22e-8d032f4bfe4f"
+            },
+            "target": {
+              "cell": "b1ef5a1b-e975-4fd3-8ba0-079c4b33533f"
+            },
+            "vertices": [
+              {
+                "x": 1100,
+                "y": -91
+              },
+              {
+                "x": 1060,
+                "y": -150
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Alternative A",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "c8a2c6cd-9c14-4d3d-a923-780ddf4f619e",
+            "labels": [
+              {
+                "position": {
+                  "distance": 0.445568595048388,
+                  "offset": -24.574955131994685
+                },
+                "attrs": {
+                  "label": {
+                    "text": "2b. Telefonanbieter"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "b0b01f0a-68c3-42aa-b22e-8d032f4bfe4f"
+            },
+            "target": {
+              "cell": "ebc88767-2bed-409f-b854-efadec206ba8"
+            },
+            "vertices": [
+              {
+                "x": 1065,
+                "y": 60
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Nummer auslesen",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "173e6c33-8e25-4c5e-bc33-9c78bbdeaaad",
+            "labels": [
+              "Nummer auslesen"
+            ],
+            "source": {
+              "cell": "fd7303e8-29d2-4d76-bf7d-87eb619ede69"
+            },
+            "target": {
+              "cell": "2e16a416-e822-44a0-8501-2d54aa8add4f"
+            },
+            "vertices": [
+              {
+                "x": 984,
+                "y": 585
+              }
+            ]
+          },
+          {
             "position": {
               "x": 410,
               "y": -174
@@ -1498,7 +1564,7 @@
             "zIndex": 13,
             "id": "b1ef5a1b-e975-4fd3-8ba0-079c4b33533f",
             "data": {
-              "type": "tm.Flow",
+              "type": "tm.Store",
               "name": "Routing-\nInformation-DB",
               "description": "",
               "outOfScope": false,
@@ -1548,7 +1614,21 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "37d6854b-29d1-42f8-a83c-2550a1f98c8f",
+                  "title": "Abgefagene OTTs",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Bspw. Mitarbeiter liest versendete OTTs mit und kann diese für sich nutzbar machen.\n\nD: 5 / R: 7 / E: 8 / A: 9 / DREA: 29",
+                  "mitigation": "Die OTTs müssen vor dem Versand verschlüsselt werden.\n\nD: 1 / R: 8 / E: 0 / A: 0 / DREA: 9",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 127,
+                  "score": "9"
+                }
+              ]
             }
           },
           {
@@ -1633,7 +1713,21 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "b3904419-3467-42b9-88b2-8af47ade33cd",
+                  "title": "Schlechte Rückverfolgbarkeit eines Angriffs",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Wenn zu wenige Daten über Aktivitäten gespeichert werden (verwendeter Account, IP-Adressen etc.) ist es schwer, einen Angreifer zu überführen.\n\nD: 6 / R: 7 / E: 7 / A: 4 / DREA: 22",
+                  "mitigation": "Es müssen alle Informationen gespeichert werden, aus denen abgeleitet werden kann, wer für einen Schaden verantwortlich ist.\n\nD: 2 / R: 1 / E: 1 / A: 4 / DREA: 8",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 121,
+                  "score": "8"
+                }
+              ]
             }
           },
           {
@@ -1739,8 +1833,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "fc3431e3-29b0-48cb-b8c8-a3247fb2cbe9",
             "zIndex": 21,
+            "id": "fc3431e3-29b0-48cb-b8c8-a3247fb2cbe9",
             "data": {
               "type": "tm.Process",
               "name": "Kryptographie\nSoftware",
@@ -1771,8 +1865,8 @@
             },
             "visible": true,
             "shape": "td-text-block",
-            "id": "08aa2841-cabd-4914-ad1c-adb8040d6223",
             "zIndex": 22,
+            "id": "08aa2841-cabd-4914-ad1c-adb8040d6223",
             "data": {
               "type": "tm.Text",
               "name": "Verschlüsselte /\nsignierte Reports",
@@ -1795,8 +1889,8 @@
             },
             "visible": true,
             "shape": "td-text-block",
-            "id": "b1a90479-52cc-4c65-81d3-727a71d52410",
             "zIndex": 23,
+            "id": "b1a90479-52cc-4c65-81d3-727a71d52410",
             "data": {
               "type": "tm.Text",
               "name": "Management\nReport",
@@ -1827,8 +1921,8 @@
             },
             "visible": true,
             "shape": "store",
-            "id": "7c88cf7a-03f7-47fe-a7a0-5afdf361f7a5",
             "zIndex": 24,
+            "id": "7c88cf7a-03f7-47fe-a7a0-5afdf361f7a5",
             "data": {
               "type": "tm.Store",
               "name": "SIEM-Logs",
@@ -1841,7 +1935,21 @@
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "c665bee1-91ea-4dc2-ac2f-503e632874f0",
+                  "title": "Manipulation der SIEM-Daten",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Ein Angreifer, der Zugriff auf die Daten des SIEM-Dienstes erhält, könnte diese Manipulieren, um Daten zu Sicherheitsvorfälle aus dem wöchentlichen Report auszulassen.\n\nD: 7 / R: 5 / E: 4 / A: 5 / DREA: 21",
+                  "mitigation": "Der SIEM-Dienst ist nur im Administrations-Netzwerk verfügbar, sodass der Zugriff durch unbefugte Personen erschwert wird.\n\nD: 7 / R: 2 / E: 1 / A: 5 / DREA: 15",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 120,
+                  "score": "15"
+                }
+              ]
             }
           },
           {
@@ -1860,8 +1968,8 @@
             },
             "visible": true,
             "shape": "td-text-block",
-            "id": "52186cb4-ccf5-4014-88eb-1752f8dbe4f8",
             "zIndex": 25,
+            "id": "52186cb4-ccf5-4014-88eb-1752f8dbe4f8",
             "data": {
               "type": "tm.Text",
               "name": "SIEM-Daten",
@@ -1878,7 +1986,7 @@
     ],
     "reviewer": "Georg Neugebauer",
     "diagramTop": 10,
-    "threatTop": 102
+    "threatTop": 127
   },
   "version": "2.2.0"
 }
