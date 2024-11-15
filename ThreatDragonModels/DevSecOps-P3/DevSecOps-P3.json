@@ -206,7 +206,7 @@
                   "status": "Open",
                   "severity": "Low",
                   "type": "Denial of service",
-                  "description": "Bei fehlender Redundanz könnte ein Ausfall des OTT-Dienstes, z. B. aufgrund von vollem Speicher oder Hardware-Ausfällen, dafür sorgen, dass Nutzer sich gar nicht mehr anmelden können.\n\nCAPEC: ????\n\nATT&CK: ???\n\nD: 9 / R: 3 / E: 3 / A: 10 / DREA: 25",
+                  "description": "Bei fehlender Redundanz könnte ein Ausfall des OTT-Dienstes, z. B. aufgrund von vollem Speicher oder Hardware-Ausfällen, dafür sorgen, dass Nutzer sich gar nicht mehr anmelden können.\n\nCAPEC:  \t\t\nCAPEC-583: Disabling Network Hardware\n\nATT&CK: ???\n\nD: 9 / R: 3 / E: 3 / A: 10 / DREA: 25",
                   "mitigation": "Redundanz des Services (mehrere Instanzen, Backups).\n\nASVS: 8.1.5 Verify that regular backups of important data are performed and that test\nrestoration of data is performed.\n\nD: 3 / R: 3 / E: 1 / A: 3 / DREA: 10",
                   "modelType": "STRIDE",
                   "new": false,
