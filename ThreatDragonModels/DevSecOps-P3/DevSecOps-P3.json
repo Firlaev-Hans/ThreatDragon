@@ -81,7 +81,7 @@
                   "severity": "Medium",
                   "type": "Spoofing",
                   "description": "Über z. B. eine Phishing Mail wird der Nutzer auf eine gefälschte Login-Seite geleitet, wo er seine Credentials und sein OTT angibt, welche ein Angreifer abfangen und für sich nutzen kann.\n\n \t\t\nCAPEC-163: Spear Phishing\nATT&CK T1534 Internal Spearphishing\n\nD: 8 / R: 2 / E: 6 / A: 7 / DREA: 23",
-                  "mitigation": "Schulung der Nutzer des Dienstes / Aufklärung über Phishing und wie man gefälschte Links und Websites erkennen kann\n\nD3FEND/(M)ASVS: ???\n\nD: 8 / R: 2 / E: 3 / A: 3 / DREA: 16",
+                  "mitigation": "Schulung der Nutzer des Dienstes / Aufklärung über Phishing und wie man gefälschte Links und Websites erkennen kann\n\nD3FEND/(M)ASVS: n. A.\n\nD: 8 / R: 2 / E: 3 / A: 3 / DREA: 16",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 116,
@@ -140,14 +140,14 @@
                   "id": "e0ed25de-ea0e-4a09-8158-6a13f0c75886",
                   "title": "Auslesen der App-Daten von SD-Karte",
                   "status": "Mitigated",
-                  "severity": "Low",
+                  "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "Da die Daten der App offenbar so auf der SD-Karte gespeichert werden, dass andere Apps darauf zugreifen können, könnte eine bösartige App die Daten eines Nutzers auslesen und stehlen.\n\nCAPEC-545: Pull Data from System Resources\n\nT1005 Data from Local System\n\nD: 8 / R: 8 / E: 10 / A: 2 / DREA: 28",
-                  "mitigation": "Die Daten sollten nur für die entsprechende App zugreifbar sein. Andere Allsecure-Apps müssen die Daten selbst z. B. über das Netzwerk erlangen.\n\nD3FEND: D3-LFP (Local File Permissions)\nMASVS-STORAGE-1 The app securely stores sensitive data.\nMASVS-STORAGE-2 The app prevents leakage of sensitive data\n\nD: 8 / R: 1 / E: 1 / A: 2 / DREA: 12",
+                  "description": "Da die Daten der App offenbar so auf der SD-Karte gespeichert werden, dass andere Apps darauf zugreifen können, könnte eine bösartige App die Daten eines Nutzers auslesen und stehlen.\n\nCAPEC-545: Pull Data from System Resources\n\nT1005 Data from Local System\n\nD: 8 / R: 8 / E: 6 / A: 2 / DREA: 24",
+                  "mitigation": "Die Daten sollten nur für die entsprechende App zugreifbar sein. Andere Allsecure-Apps müssen die Daten selbst z. B. über das Netzwerk erlangen.\n\nD3FEND: D3-LFP (Local File Permissions)\nMASVS-STORAGE-1 The app securely stores sensitive data.\nMASVS-STORAGE-2 The app prevents leakage of sensitive data\n\nD: 8 / R: 7 / E: 1 / A: 2 / DREA: 18",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 122,
-                  "score": "12"
+                  "score": "18"
                 },
                 {
                   "id": "8e58f2d1-a992-4aa1-b9aa-322b6b17c6dd",
@@ -171,8 +171,8 @@
           },
           {
             "position": {
-              "x": 488,
-              "y": -11.999999999999922
+              "x": 496.75,
+              "y": -7
             },
             "size": {
               "width": 130,
@@ -183,8 +183,8 @@
                 "text": "2-Faktor-Authe\nntifizierungsdi\nenst"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -203,7 +203,7 @@
                 {
                   "id": "66a9f37f-6a25-4990-b518-68faccd83695",
                   "title": "Ausfall des Dienstes",
-                  "status": "Mitigated",
+                  "status": "Open",
                   "severity": "Low",
                   "type": "Denial of service",
                   "description": "Bei fehlender Redundanz könnte ein Ausfall des OTT-Dienstes, z. B. aufgrund von vollem Speicher oder Hardware-Ausfällen, dafür sorgen, dass Nutzer sich gar nicht mehr anmelden können.\n\nCAPEC: ????\n\nATT&CK: ???\n\nD: 9 / R: 3 / E: 3 / A: 10 / DREA: 25",
@@ -214,7 +214,7 @@
                   "score": "10"
                 }
               ],
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "protocol": "",
               "isEncrypted": false,
@@ -1161,93 +1161,6 @@
                   "name": "block"
                 },
                 "sourceMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": true,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "id": "67cd57a5-dc11-4d1e-be67-4e907ae4fb6b",
-            "source": {
-              "cell": "9cee3c26-55fa-49ca-b161-61fd83952a3f"
-            },
-            "target": {
-              "cell": "7c88cf7a-03f7-47fe-a7a0-5afdf361f7a5"
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Log(Login, OTT, Phone Number)",
-              "description": "",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": true,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "id": "81c8482c-19ed-41ab-bae2-a5561223b4b5",
-            "labels": [
-              "Log(Login, OTT, Phone Number)"
-            ],
-            "source": {
-              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
-            },
-            "target": {
-              "cell": "c2716661-ef88-48a8-8d0f-724e1923d562"
-            },
-            "vertices": [
-              {
-                "x": 559.5,
-                "y": -60
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
                   "name": ""
                 },
                 "strokeDasharray": null
@@ -1458,6 +1371,107 @@
             ]
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Log(Login, OTT, Phone Number)",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "81c8482c-19ed-41ab-bae2-a5561223b4b5",
+            "labels": [
+              "Log(Login, OTT, Phone Number)"
+            ],
+            "source": {
+              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
+            },
+            "target": {
+              "cell": "c2716661-ef88-48a8-8d0f-724e1923d562"
+            },
+            "vertices": [
+              {
+                "x": 568.25,
+                "y": -30
+              },
+              {
+                "x": 559.5,
+                "y": -60
+              },
+              {
+                "x": 520,
+                "y": -100
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "67cd57a5-dc11-4d1e-be67-4e907ae4fb6b",
+            "source": {
+              "cell": "9cee3c26-55fa-49ca-b161-61fd83952a3f"
+            },
+            "target": {
+              "cell": "7c88cf7a-03f7-47fe-a7a0-5afdf361f7a5"
+            },
+            "vertices": [
+              {
+                "x": 270,
+                "y": 243
+              }
+            ]
+          },
+          {
             "position": {
               "x": 410,
               "y": -174
@@ -1494,7 +1508,8 @@
               "isEncrypted": true,
               "isSigned": true,
               "hasOpenThreats": false,
-              "threats": []
+              "threats": [],
+              "storesInventory": null
             }
           },
           {
@@ -1594,8 +1609,8 @@
                 "text": "Allsecure \nMobile Phone\n OTT Service"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1609,7 +1624,7 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -1618,7 +1633,7 @@
                 {
                   "id": "37d6854b-29d1-42f8-a83c-2550a1f98c8f",
                   "title": "Abgefagene OTTs",
-                  "status": "Mitigated",
+                  "status": "Open",
                   "severity": "Low",
                   "type": "Information disclosure",
                   "description": "Bspw. Mitarbeiter liest versendete OTTs mit und kann diese für sich nutzbar machen.\n\nCAPEC-158: Sniffing Network Traffic\nATT&CK T1040 Network Sniffing, Technique\n\nD: 5 / R: 7 / E: 8 / A: 9 / DREA: 29",
@@ -1720,7 +1735,7 @@
                   "status": "Mitigated",
                   "severity": "Low",
                   "type": "Repudiation",
-                  "description": "Wenn zu wenige Daten über Aktivitäten gespeichert werden (verwendeter Account, IP-Adressen etc.) ist es schwer, einen Angreifer zu überführen.\n\nCAPEC: ???\nATT&CK: ???\n\nD: 6 / R: 7 / E: 7 / A: 4 / DREA: 22",
+                  "description": "Wenn zu wenige Daten über Aktivitäten gespeichert werden (verwendeter Account, IP-Adressen etc.) ist es schwer, einen Angreifer zu überführen.\n\nCAPEC: n. A.\nATT&CK: T1562.002 Disable Windows Event Logging (Naja, so halb)\n\nD: 6 / R: 7 / E: 7 / A: 4 / DREA: 24",
                   "mitigation": "Es müssen alle Informationen gespeichert werden, aus denen abgeleitet werden kann, wer für einen Schaden verantwortlich ist.\n\nASVS: 7.1.4 Verify that each log event includes necessary information that would allow for\na detailed investigation of the timeline when an event happens. (C9)\n\nD: 2 / R: 1 / E: 1 / A: 4 / DREA: 8",
                   "modelType": "STRIDE",
                   "new": false,
@@ -1756,8 +1771,8 @@
           },
           {
             "position": {
-              "x": 505.5,
-              "y": 290
+              "x": 514.25,
+              "y": 310
             },
             "size": {
               "width": 112.5,
@@ -1911,11 +1926,13 @@
                 "text": "SIEM-Logs"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1929,7 +1946,7 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
@@ -1939,7 +1956,7 @@
                 {
                   "id": "c665bee1-91ea-4dc2-ac2f-503e632874f0",
                   "title": "Manipulation der SIEM-Daten",
-                  "status": "Mitigated",
+                  "status": "Open",
                   "severity": "Medium",
                   "type": "Tampering",
                   "description": "Ein Angreifer, der Zugriff auf die Daten des SIEM-Dienstes erhält, könnte diese Manipulieren, um Daten zu Sicherheitsvorfälle aus dem wöchentlichen Report auszulassen.\n\nCAPEC-165: File Manipulation\nATT&CK  T1565.001 Data Manipulation: Stored Data Manipulation\n\nD: 7 / R: 5 / E: 4 / A: 5 / DREA: 21",
@@ -1986,7 +2003,7 @@
     ],
     "reviewer": "Georg Neugebauer",
     "diagramTop": 10,
-    "threatTop": 127
+    "threatTop": 129
   },
   "version": "2.2.0"
 }
